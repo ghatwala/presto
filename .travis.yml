@@ -1,4 +1,8 @@
 language: java
+matrix:
+  include:
+    - os: linux-ppc64le # power queue name
+    - os: linux         # Intel queue name
 
 env:
   global:
