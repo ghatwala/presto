@@ -2,7 +2,11 @@ language: java
 matrix:
   include:
     - os: linux-ppc64le # power queue name
+      dist: xenial      # power jobs only on ubuntu-xenial distribution
+      sudo: false       # deploy on workers with docker backend
     - os: linux         # Intel queue name
+      sudo: required
+      dist: trusty
 
 env:
   global:
@@ -27,8 +31,7 @@ env:
     - PRODUCT_TESTS_SPECIFIC_ENVIRONMENT_2=true
     - HIVE_TESTS=true
 
-sudo: required
-dist: trusty
+
 
 cache:
   directories:
